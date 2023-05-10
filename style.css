@@ -1,0 +1,202 @@
+/*  Pour reset les marges*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* wrapper  =   bloc contenant les réglages par défaut pour toute la page*/
+
+#wrapper {
+    padding: 0 15%;
+    display: flex;
+    flex-direction: column;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 660px;
+    line-height: 2;
+    background-image: url(./images/Rayons.jpg);
+    background-size: cover; 
+    opacity: 70%;
+}
+
+/*//////////////////////////////////////TITRE//////////////////////////////*/
+
+header {
+    display: flex;
+    flex-direction: column;
+    background: cornsilk;
+    text-align: center;
+    width: 40%;
+    box-shadow: 0px 0px 6px;
+    
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3em;
+    color: darkslategray;
+    text-align: center;
+    background: cornsilk;
+}
+
+/*//////////////////////////////////////MENU//////////////////////////////*/
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(cornsilk, darkslategray);
+    padding: 5px;
+    width: 100%;
+}
+
+.menu:hover {
+    font-weight: bold;
+    font-size: 1em;
+    opacity: 80%;
+    transition: ease-in-out 0.5s;
+    box-shadow: 0px 10px 10px rgb(0, 0, 0);
+}
+
+a {
+    text-decoration: none;
+    color: cornsilk;
+}
+
+/*//////////////////////////////////////FORMULAIRE//////////////////////////////*/
+/*//////////////////////////////////////AJOUTER UN PRODUIT//////////////////////////////*/
+
+form {
+    border-radius: 10px;
+    width: 300px;
+    background: linear-gradient(darkslategray, cornsilk);
+    box-shadow: 0px 10px 10px rgb(0, 0, 0);
+}
+
+p {
+    padding-top: 20px;
+}
+
+label {
+    color: cornsilk;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input {
+    background: cornsilk;
+    color: darkslategray;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0px 6px 6px rgb(0, 0, 0);
+}
+
+input[type='submit'] {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0px 6px 6px  rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type='submit']:hover {
+    background: darkslategray;
+    color: cornsilk;
+    transition: ease-in-out 0.5s;
+}
+
+/*//////////////////////////////////////TABLEAU//////////////////////////////*/
+/*//////////////////////////////////////RESULTAT//////////////////////////////*/
+
+table {
+    background: cornsilk;
+    width: 330px;
+    text-align: center;
+    border-collapse: collapse;
+    box-shadow: 0px 10px 10px rgb(0, 0, 0);
+}
+
+thead {
+    background: linear-gradient(darkslategray, cornsilk);
+    color: cornsilk;
+    font-weight: bold;
+}
+
+tbody {
+    color: darkslategray;
+    background: linear-gradient(cornsilk, darkslategray);
+}
+
+/*//////////////////////////////////////RESPONSIVE//////////////////////////////*/
+
+@media only screen and (max-width:1196px) {
+
+    #wrapper {
+        height: 570px;
+        margin: auto;
+    }
+
+    header {
+        width: 40%;
+    }
+
+    form {
+        width: 280px;
+    }
+    
+}
+
+@media only screen and (max-width:996px) {
+
+    #wrapper {
+        height: 570px;
+        margin: auto;
+    }
+
+    header {
+        width: 50%;
+    }
+
+    form {
+        width: 280px;
+    }
+    
+}
+
+@media only screen and (max-width:660px) {
+
+    #wrapper {
+        height: 570px;
+        margin: auto;
+    }
+
+    header {
+        width: 80%;
+    }
+
+    form {
+        width: 260px;
+    }
+}
+
+@media only screen and (max-width:460px) {
+
+    #wrapper {
+        height: 570px;
+        margin: auto;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    form {
+        width: 240px;
+    }
+}
