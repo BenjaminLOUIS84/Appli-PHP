@@ -45,12 +45,12 @@
                 <input type="submit" name="submit" value="AJOUTER">
             </p>
         </form>
+
     </div>
 
     <?php
-    // Compter le nombre de produits en stock  
-
-    //echo "<p>Nombre de références en stock: ".(count($_SESSION['products'])). "</p>";
+    // Compter le nombre de produits en stock 
+    
     ?>
 
 </body>
