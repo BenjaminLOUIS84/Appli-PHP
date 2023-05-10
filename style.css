@@ -18,9 +18,11 @@
     text-align: center;
     height: 660px;
     line-height: 2;
-    background-image: url(./images/Rayons.jpg);
+
+    background: linear-gradient(darkslategray, cornsilk);
+    /* background-image: url(./image/rayons.jpg);
     background-size: cover; 
-    opacity: 70%;
+    opacity: 80%; */
 }
 
 /*//////////////////////////////////////TITRE//////////////////////////////*/
@@ -80,6 +82,7 @@ form {
 
 p {
     padding-top: 20px;
+    color:darkslategray;
 }
 
 label {
@@ -129,7 +132,7 @@ thead {
 }
 
 tbody {
-    color: darkslategray;
+    color: black;
     background: linear-gradient(cornsilk, darkslategray);
 }
 

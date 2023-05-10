@@ -63,6 +63,7 @@
                         "<tbody>";  
                 $totalGeneral = 0;
                 foreach($_SESSION['products'] as $index => $product){
+
                     echo "<tr>",
                             "<td>".$index."</td>",
                             "<td>".$product['name']."</td>",
@@ -72,7 +73,6 @@
                         "</tr>";
                     $totalGeneral += $product['total'];
                 }
-
                     echo "<tr>",
                             "<td colspan=4>Total général : </td>",
                             "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
@@ -80,6 +80,11 @@
                     "</body>",
                 "</table>";
             }
+
+            // Compter le nombre de produits en stock   
+                    
+                    echo "<p>Nombre de références en stock: ".(count($_SESSION['products']))."</p>";
+
         ?>
     </div>    
 </body>
