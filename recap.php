@@ -83,7 +83,7 @@
 
             // Compter le nombre de produits en stock   
                     
-                    echo "<p>Nombre de références en stock: ".(count($_SESSION['products']))."</p>";
+                   // echo "<p>Nombre de références en stock: ".(count($_SESSION['products']))."</p>";
 
         ?>
     </div>    
