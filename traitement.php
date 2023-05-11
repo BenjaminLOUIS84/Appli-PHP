@@ -35,20 +35,22 @@
                 "total" => $price*$qtt
             ];
 
-            // Enregistrer ce produit créer en session
+            // Enregistrer le tableau de produits créer en session (tableau contenant des références enregistrer dans le stock)
 
             $_SESSION['products'][] = $product;
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             // $_SESSION['nbProducts'][] = count($_SESSION['products']); //Compte l'array nbProducts pour sortir le nombre de produits.
             // $_SESSION['checkSuccess'] = "Produit ajouté avec succès !";
             // $_SESSION['checkSuccess'] = "Echec de l'ajout du produit !"; // Message indiquant que le produit n'est pas ajouté correctement.
-              
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
         }
     
     }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Remettre le tableau des références (produits) à zéro
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
     // foreach ($_POST as $key => $value){ // On parcourt le tableau $_POST qui contiendra les clés qui sont envoyées (dans notre cas le bouton supprimer)
 
     //     if ($value == "Supprimer"){ // On s'occupe de la valeur, "Supprimer" correspond à la value du bouton tandis que la clé c'est l'index des produits.
@@ -77,7 +79,8 @@
     //     header("Location:recap.php"); // Redirection à la page récap.
     //     exit();
     // }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
     // Si la requête POST transmet bien une clé "submit" au serveur
     //si ce n'est pas le cas la fonction header() effectuera une redirection vers un nouvel entête HTTP 
 
