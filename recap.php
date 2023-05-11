@@ -1,7 +1,8 @@
-<!-- Pour parcourir le tableau de session de la page de traitement on appel la fonction ici -->
-
 <?php
+    //Pour parcourir le tableau de session de la page de traitement on appel la fonction ici
+
     session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +67,9 @@
                             "</tr>",
                         "</thead>",
                         "<tbody>";  
-                $totalGeneral = 0;
-                foreach($_SESSION['products'] as $index => $product){
+
+                    $totalGeneral = 0;
+                    foreach($_SESSION['products'] as $index => $product){
 
                     // On parcourt ici le tableau products et on ressort $index et $product pour en manipuler facilement les données.
                         
@@ -78,6 +80,7 @@
                             "<td>".$product['qtt']."</td>",
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         "</tr>";
+                        
                     $totalGeneral += $product['total'];
                 }
                 
@@ -93,29 +96,40 @@
                 "</table>";
 
                 //colspan = '4' permet de fusionner 4 cellules dont le contenu sera "Total général:".            
-        
             }
 
+            ///////////////////////////////////////////////////////////////////////////////
+            //Faire apparaitre une notification à chaque ajout de références dans le stock
+            //////////////////////////////////////////////////////////////////////////////
+       
+            // if(isset($_SESSION['product'])==$product){
+                
+            //     echo "";
+            // }else{
+
+            //     print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
+            // }
         ?>
 
+        <!-- //////////////////////////////////////////////////////////////////////////////// -->
         <!-- Bouton pour reset le stock -->
 
         <form action="traitement.php" method="post">
             <input type="reset" name="reset" value="VIDER LE STOCK">
         </form>
-        
+
         <?php
-        ///////////////////////////////////////////////////////////////////////////////
-        //Pour afficher le nombre de produits en session (références en stock)
-        //////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////
+            //Pour afficher le nombre de produits en session (références en stock)
+            //////////////////////////////////////////////////////////////////////////////
         
-        // if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {    
-        //             echo "<p> Nombre de produits : 0 </p>";
-        //         } else {
-        //             $nbProducts = $_SESSION['nbProducts'];
-        //             echo "<p>nombre de produits : ".$nbProducts."</p>";        
-        //         }
-        //////////////////////////////////////////////////////////////////////////////
+            if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {    
+                        echo "<p> Nombre de produits : 0 </p>";
+                    } else {
+                        $nbProducts = $_SESSION['nbProducts'];
+                        echo "<p>nombre de produits : ".count($_SESSION['products'])."</p>";        
+                    }
+            //////////////////////////////////////////////////////////////////////////////////
         ?>
 
     </div>    

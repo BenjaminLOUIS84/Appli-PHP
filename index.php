@@ -1,11 +1,8 @@
 <?php
-     session_start();
+    //Pour parcourir le tableau de session de la page de traitement on appel la fonction ici
 
-    // if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
-
-    //     $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
-
-    // }
+    session_start();
+    
 ?>
 
 <!DOCTYPE html>
@@ -28,26 +25,27 @@
             </nav>
         </header>
 
+        <?php
+            ///////////////////////////////////////////////////////////////////////////////
+            //Pour afficher le nombre de produits en session (références en stock)
+            //////////////////////////////////////////////////////////////////////////////
+
+            if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {    
+                        echo "<p> Nombre de produits : 0 </p>";
+                    } else {
+                        $nbProducts = $_SESSION['nbProducts'];
+                        echo "<p>nombre de produits : ".count($_SESSION['products'])."</p>";        
+                    }
+            /////////////////////////////////////////////////////////////////////////////////
+        ?>
+
         <!-- La balise form comporte 2 attributs action qui indique la cible du formulaire (fichier à atteindre quand l'user soumettra le formulaire)
         et method qui précise par quelle méthode les données seront transmises au serveur -->
         <!-- On privilégie Post pour ne pas polluer l'URL -->
 
         <form action="traitement.php" method="post">
 
-        <?php
-        ///////////////////////////////////////////////////////////////////////////////
-        //Pour afficher le nombre de produits en session (références en stock)
-        //////////////////////////////////////////////////////////////////////////////
-
-        // if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {    
-        //             echo "<p> Nombre de produits : 0 </p>";
-        //         } else {
-        //             $nbProducts = $_SESSION['nbProducts'];
-        //             echo "<p>nombre de produits : ".$nbProducts."</p>";        
-        //         }
-        //////////////////////////////////////////////////////////////////////////////
-        ?>
-
+       
             <p>
                 <label>
                     Nom du produit<br>
@@ -71,23 +69,24 @@
             </p>
         </form>
 
-    <?php
+        <?php
+            ///////////////////////////////////////////////////////////////////////////////
+            //Modifier Veuillez ajouter un produit par Produit ajouté avec succès
+            //////////////////////////////////////////////////////////////////////////////
 
-        // Compter le nombre de produits en stock 
+            // if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
 
-        // echo "<p>".$_SESSION['checkSuccess']."<p>"; 
-        
+            //     $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
+            // }
 
-    ?>
+            // echo "<p>".$_SESSION['checkSuccess']."<p>";
+
+            ////////////////////////////////////////////////////////////////////////////////
+        ?>
 
     </div>
 
     <?php
-        // Pour envoyer une notification lors d'une redirection (et lorsque qu'on ajoute un produit?)
-
-        // if (isset($_GET['Message'])){
-        //      print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
-        // }
         
     ?>
 
