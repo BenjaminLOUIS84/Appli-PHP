@@ -120,7 +120,7 @@ input[type='submit']:hover {
 
 table {
     background: cornsilk;
-    width: 330px;
+    width: 500px;
     text-align: center;
     border-collapse: collapse;
     box-shadow: 0px 10px 10px rgb(0, 0, 0);
@@ -139,7 +139,8 @@ tbody {
 
 input[type='reset'] {
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    width: 200px;
     box-shadow: 0px 6px 6px  rgb(0, 0, 0);
     cursor: pointer;
     font-weight: bold;
@@ -156,7 +157,7 @@ input[type='reset']:hover {
 @media only screen and (max-width:1196px) {
 
     #wrapper {
-        height: 570px;
+        height: 700px;
         margin: auto;
     }
 
@@ -167,13 +168,15 @@ input[type='reset']:hover {
     form {
         width: 280px;
     }
-    
+    table {
+        width:400px;
+    }
 }
 
 @media only screen and (max-width:996px) {
 
     #wrapper {
-        height: 610px;
+        height: 700px;
         margin: auto;
     }
 
@@ -190,7 +193,7 @@ input[type='reset']:hover {
 @media only screen and (max-width:660px) {
 
     #wrapper {
-        height: 620px;
+        height: 700px;
         margin: auto;
     }
 
@@ -200,6 +203,10 @@ input[type='reset']:hover {
 
     form {
         width: 260px;
+    }
+
+    table {
+        width:360px;
     }
 }
 

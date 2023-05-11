@@ -5,6 +5,25 @@
     session_start();
 
 
+// Remettre le tableau des références (produits) à zéro
+
+    if(isset($_POST['reset'])) {
+
+    // reset($_SESSION['products']); // Supprime les éléments du tableau products de la session
+    // $_SESSION['products'] = 0; // Remet le compteur de produits à 0
+    // reset($product);
+    // exit();
+
+    //    $_SESSION['products'][] = 0;
+    //    exit();
+    
+        unset($_SESSION['products']);
+        $_SESSION['nbProducts'] = 0;
+        header("Location:recap.php");
+        exit();
+    }
+
+    
 // Vérifier l'éxistence d'une requête POST (vérifier l'existence de la clé "submit dans le tableau POST)
 // Créer une condition pour limiter l'accès à cette page par les seules requêtes HTTP provenant de la soumission de notre formulaire.
 
@@ -42,11 +61,6 @@
     
     }
 
-    if(isset($_POST['reset'])){
-
-        reset($_SESSION['products']);
-    }
-
 
 // Si la requête POST transmet bien une clé "submit" au serveur
 //si ce n'est pas le cas la fonction hearder() effectuera une redirection vers un nouvel entête HTTP 
@@ -55,7 +69,7 @@
     //header("Location:index.php");
 
     header("Location:index.php?Message=" . urlencode($Message));
-  
+    exit();
         
 
 ?>
