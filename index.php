@@ -1,3 +1,8 @@
+<?php
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,11 +51,23 @@
             </p>
         </form>
 
+    <?php
+
+    // Compter le nombre de produits en stock 
+   
+     echo "<p>Nombre de références en stock: ".(count($_SESSION['products']))."</p>";
+
+    ?>
+
     </div>
 
     <?php
-    // Compter le nombre de produits en stock 
-    
+    // Pour envoyer une notification lors d'une redirection
+
+        if (isset($_GET['Message'])){
+             print '<script type="text/javascript">alert("Redirection effectuée avec succès");location="index.php";</script>';
+        }
+        
     ?>
 
 </body>
