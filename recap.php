@@ -24,35 +24,35 @@
                 </nav>
             </header>
 
-        <!--Réaliser 3 tests unitaires   -->
-        <!-- Test 1 Accéder à recap.php sans ajouter de produit -->
+            <!--Réaliser 3 tests unitaires   -->
+            <!-- Test 1 Accéder à recap.php sans ajouter de produit -->
         <?php
-        //echo'<pre>';
-        // var_dump($_SESSION);
-        // echo'</pre>';
+            //echo'<pre>';
+            // var_dump($_SESSION);
+            // echo'</pre>';
         ?>
-        <!-- Test 2 Accéder à recap.php après avoir ajouté 2 produits -->
+            <!-- Test 2 Accéder à recap.php après avoir ajouté 2 produits -->
         <?php 
-        // echo'<pre>';
-        // var_dump($_SESSION);
-        // echo'</pre>';
+            // echo'<pre>';
+            // var_dump($_SESSION);
+            // echo'</pre>';
         ?>
-        <!-- Test 3 Accéder à recap.php après avoir ajouté un produit bizarre -->
+            <!-- Test 3 Accéder à recap.php après avoir ajouté un produit bizarre -->
         <?php
-        // echo'<pre>';
-        // var_dump($_SESSION);
-        // echo'</pre>';
+            // echo'<pre>';
+            // var_dump($_SESSION);
+            // echo'</pre>';
         ?>
         <?php
-        // Afficher les produits dans un tableau HTML
-        // !isset  vérifie si dans le tableau associatif $_SESSION, il y a des données enregistrées (en occurence 'products' qu'on a créé dans traitement et qu'on a push)
-        // empty() 'products' est bien présent mais il n'y a aucune valeur à l'intérieur.
+            // Afficher les produits dans un tableau HTML
+            // !isset  vérifie si dans le tableau associatif $_SESSION, il y a des données enregistrées (en occurence 'products' qu'on a créé dans traitement et qu'on a push)
+            // empty() 'products' est bien présent mais il n'y a aucune valeur à l'intérieur.
 
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
-                echo "<p>Aucun produit en session...</p>";
+               // echo "<p>Aucun produit en stock...</p>";
             }
 
-        // Si une clé existe et qu'il y a des produits qui ont été add, alors on peut afficher ce que l'utilisateur a ajouté :            
+            // Si une clé existe et qu'il y a des produits qui ont été add, alors on peut afficher ce que l'utilisateur a ajouté :            
             
             else{
                 echo "<table>",
@@ -69,7 +69,7 @@
                 $totalGeneral = 0;
                 foreach($_SESSION['products'] as $index => $product){
 
-        // On parcourt ici le tableau products et on ressort $index et $product pour en manipuler facilement les données.
+                    // On parcourt ici le tableau products et on ressort $index et $product pour en manipuler facilement les données.
                         
                     echo "<tr>",
                             "<td>".$index."</td>",
@@ -81,9 +81,9 @@
                     $totalGeneral += $product['total'];
                 }
                 
-        // tr pour nouvelle ligne (table Row). On affichera à chaque fois le $product[item]. product étant un tableau qu'on a initialisé à chaque input contenant un name, un price, une qtt et un total.
-        // number_format permet de formatter un nombre.
-        // number_format(float $nombre (ici le price), int decimale (2chiffre après virgule ici), le séparateur sous forme de string "," ou "." mais aussi "<br>" par ex)
+                    // tr pour nouvelle ligne (table Row). On affichera à chaque fois le $product[item]. product étant un tableau qu'on a initialisé à chaque input contenant un name, un price, une qtt et un total.
+                    // number_format permet de formatter un nombre.
+                    // number_format(float $nombre (ici le price), int decimale (2chiffre après virgule ici), le séparateur sous forme de string "," ou "." mais aussi "<br>" par ex)
                     
                     echo "<tr>",
                             "<td colspan=4>Total général : </td>",
@@ -92,21 +92,12 @@
                     "</body>",
                 "</table>";
 
-        //colspan = '4' permet de fusionner 4 cellules dont le contenu sera "Total général:". Voir resultat car j'ai créé une border pour voir la diff.           
+                //colspan = '4' permet de fusionner 4 cellules dont le contenu sera "Total général:".            
         
             }
 
             // Reset le tableau à vide
 
-            // if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])){
-            //     echo "<p>Nombre de produit : 0</p>";
-            // }
-
-            // else{
-
-            //     $nbProducts = $_SESSION['nbProducts'];
-            //     echo "Nombre de produits : ".$nbProducts;
-            // }
         ?>
 
         <form action="traitement.php" method="post">
@@ -118,8 +109,14 @@
         <?php
 
             // Compter le nombre de produits en stock   
-                    
-            echo "<p>Nombre de références en stock: ".(count($_SESSION['products']))."</p>";
+                   
+            if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {
+                echo "<p> Nombre de produits : 0 </p>";
+            } else {
+
+            $nbProducts = $_SESSION['nbProducts'];
+                echo "Nombre de produits : ".$nbProducts;
+            }
 
         ?>
 

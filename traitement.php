@@ -1,31 +1,12 @@
 <?php
 
-// Ouvrir une session sur le serveur avec la fonction session_start()
+    // Ouvrir une session sur le serveur avec la fonction session_start()
 
     session_start();
 
-
-// Remettre le tableau des références (produits) à zéro
-
-    if(isset($_POST['reset'])) {
-
-    // reset($_SESSION['products']); // Supprime les éléments du tableau products de la session
-    // $_SESSION['products'] = 0; // Remet le compteur de produits à 0
-    // reset($product);
-    // exit();
-
-    //    $_SESSION['products'][] = 0;
-    //    exit();
     
-        unset($_SESSION['products']);
-        $_SESSION['nbProducts'] = 0;
-        header("Location:recap.php");
-        exit();
-    }
-
-    
-// Vérifier l'éxistence d'une requête POST (vérifier l'existence de la clé "submit dans le tableau POST)
-// Créer une condition pour limiter l'accès à cette page par les seules requêtes HTTP provenant de la soumission de notre formulaire.
+    // Vérifier l'éxistence d'une requête POST (vérifier l'existence de la clé "submit dans le tableau POST)
+    // Créer une condition pour limiter l'accès à cette page par les seules requêtes HTTP provenant de la soumission de notre formulaire.
 
     if(isset($_POST['submit'])){
 
@@ -57,19 +38,53 @@
             // Enregistrer ce produit créer en session
 
             $_SESSION['products'][] = $product;
-                    }
+            $_SESSION['nbProducts'][] = count($_SESSION['products']); //Compte l'array nbProducts pour sortir le nombre de produits.
+            $_SESSION['checkSuccess'] = "Produit ajouté avec succès !";
+            $_SESSION['checkSuccess'] = "Echec de l'ajout du produit !"; // Message indiquant que le produit n'est pas ajouté correctement.
+              
+        }
     
     }
 
+    // Remettre le tableau des références (produits) à zéro
 
-// Si la requête POST transmet bien une clé "submit" au serveur
-//si ce n'est pas le cas la fonction hearder() effectuera une redirection vers un nouvel entête HTTP 
+    foreach ($_POST as $key => $value){ // On parcourt le tableau $_POST qui contiendra les clés qui sont envoyées (dans notre cas le bouton supprimer)
 
-// Pour envoyer une notification de redirection ajouter ?Message=" . urlencode($Message)
+        if ($value == "Supprimer"){ // On s'occupe de la valeur, "Supprimer" correspond à la value du bouton tandis que la clé c'est l'index des produits.
+    
+            foreach ($_SESSION['products'] as $index => $value){ // On parcourt notre tableau des produits et pour chaque index de produit, on va vérifier si il y a un Isset de l'index en question. Le name des boutons correspond à l'index des produits un peu comme un Id unique.
+    
+                if (isset($_POST[$index])){
+            
+                    unset($_SESSION['products'][$index]); 
+            
+                    $_SESSION['nbProducts'] -= 1; // On retire 1 produit du nbProducts puisqu'on en supprime 1.
+            
+                    header("Location:recap.php"); // Redirection à la page récap.
+                    exit();
+                }
+            }
+        }
+    }
+    
+    if (isset($_POST['reset'])){
+    
+        unset($_SESSION['products']); 
+    
+        $_SESSION['nbProducts'] = 0;
+
+        header("Location:recap.php"); // Redirection à la page récap.
+        exit();
+    }
+
+    // Si la requête POST transmet bien une clé "submit" au serveur
+    //si ce n'est pas le cas la fonction header() effectuera une redirection vers un nouvel entête HTTP 
+
+    // Pour envoyer une notification de redirection ajouter ?Message=" . urlencode($Message)
     //header("Location:index.php");
 
-    header("Location:index.php?Message=" . urlencode($Message));
-    exit();
+        // header("Location:index.php?Message=" . urlencode($Message));
+        // exit();
         
 
 ?>
