@@ -1,5 +1,12 @@
 <?php
     session_start();
+
+    if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
+
+        $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
+
+    }
+
 ?>
 
 
@@ -28,6 +35,19 @@
         <!-- On privilégie Post pour ne pas polluer l'URL -->
 
         <form action="traitement.php" method="post">
+
+        <?php
+
+        if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {
+                    
+                    echo "<p> Nombre de produits : 0 </p>";
+                
+                } else {
+                    $nbProducts = $_SESSION['nbProducts'];
+                    echo "<p>nombre de produits : ".$nbProducts."</p>";        
+                }
+        ?>
+
             <p>
                 <label>
                     Nom du produit<br>
@@ -54,8 +74,9 @@
     <?php
 
         // Compter le nombre de produits en stock 
-   
-        echo "<p>Nombre de références en stock: ".(count($_SESSION['products']))."</p>";
+
+        echo "<p>".$_SESSION['checkSuccess']."<p>"; 
+        
 
     ?>
 
@@ -64,9 +85,9 @@
     <?php
     // Pour envoyer une notification lors d'une redirection (et lorsque qu'on ajoute un produit?)
 
-        if (isset($_GET['Message'])){
-             print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
-        }
+        // if (isset($_GET['Message'])){
+        //      print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
+        // }
         
     ?>
 
