@@ -96,28 +96,26 @@
         
             }
 
-            // Reset le tableau à vide
-
         ?>
 
+        <!-- Bouton pour reset le stock -->
+
         <form action="traitement.php" method="post">
-
             <input type="reset" name="reset" value="VIDER LE STOCK">
-            
         </form>
-
+        
         <?php
-
-            // Compter le nombre de produits en stock   
-                   
-            // if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {
-            //     echo "<p> Nombre de produits : 0 </p>";
-            // } else {
-
-            // $nbProducts = $_SESSION['nbProducts'];
-            //     echo "Nombre de produits : ".$nbProducts;
-            // }
-
+        ///////////////////////////////////////////////////////////////////////////////
+        //Pour afficher le nombre de produits en session (références en stock)
+        //////////////////////////////////////////////////////////////////////////////
+        
+        // if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {    
+        //             echo "<p> Nombre de produits : 0 </p>";
+        //         } else {
+        //             $nbProducts = $_SESSION['nbProducts'];
+        //             echo "<p>nombre de produits : ".$nbProducts."</p>";        
+        //         }
+        //////////////////////////////////////////////////////////////////////////////
         ?>
 
     </div>    
