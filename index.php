@@ -1,11 +1,11 @@
 <?php
-    session_start();
+    // session_start();
 
-    if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
+    // if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
 
-        $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
+    //     $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
 
-    }
+    // }
 
 ?>
 
@@ -38,14 +38,14 @@
 
         <?php
 
-        if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {
+        // if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {
                     
-                    echo "<p> Nombre de produits : 0 </p>";
+        //             echo "<p> Nombre de produits : 0 </p>";
                 
-                } else {
-                    $nbProducts = $_SESSION['nbProducts'];
-                    echo "<p>nombre de produits : ".$nbProducts."</p>";        
-                }
+        //         } else {
+        //             $nbProducts = $_SESSION['nbProducts'];
+        //             echo "<p>nombre de produits : ".$nbProducts."</p>";        
+        //         }
         ?>
 
             <p>
@@ -75,7 +75,7 @@
 
         // Compter le nombre de produits en stock 
 
-        echo "<p>".$_SESSION['checkSuccess']."<p>"; 
+       // echo "<p>".$_SESSION['checkSuccess']."<p>"; 
         
 
     ?>
