@@ -20,7 +20,7 @@
                 <nav>
                     <h1>APPLI PHP</h1>
                     <div class="menu">
-                        <a href="index.php">Retour</a>    
+                        <a href="index.php">RETOUR</a>    
                     </div>
                 </nav>
             </header>
