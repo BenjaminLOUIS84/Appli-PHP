@@ -38,15 +38,22 @@
             // Enregistrer ce produit créer en session
 
             $_SESSION['products'][] = $product;
-        }
+                    }
     
     }
+
+    if(isset($_POST['reset'])){
+
+        reset($_SESSION['products']);
+    }
+
 
 // Si la requête POST transmet bien une clé "submit" au serveur
 //si ce n'est pas le cas la fonction hearder() effectuera une redirection vers un nouvel entête HTTP 
 
-// Pour envoyer une notification lors d'une redirection ajouter ?Message=" . urlencode($Message)
-    
+// Pour envoyer une notification de redirection ajouter ?Message=" . urlencode($Message)
+    //header("Location:index.php");
+
     header("Location:index.php?Message=" . urlencode($Message));
   
         

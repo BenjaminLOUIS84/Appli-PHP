@@ -80,7 +80,12 @@
                     "</body>",
                 "</table>";
             }
+            // Reset le tableau à vide
+        ?>
+            
+            <input type="reset" name="reset" value="VIDER LE STOCK">
 
+        <?php
             // Compter le nombre de produits en stock   
                     
                    echo "<p>Nombre de références en stock: ".(count($_SESSION['products']))."</p>";

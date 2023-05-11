@@ -62,10 +62,10 @@
     </div>
 
     <?php
-    // Pour envoyer une notification lors d'une redirection
+    // Pour envoyer une notification lors d'une redirection (et lorsque qu'on ajoute un produit?)
 
         if (isset($_GET['Message'])){
-             print '<script type="text/javascript">alert("Redirection effectuée avec succès");location="index.php";</script>';
+             print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
         }
         
     ?>

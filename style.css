@@ -114,6 +114,7 @@ input[type='submit']:hover {
     transition: ease-in-out 0.5s;
 }
 
+
 /*//////////////////////////////////////TABLEAU//////////////////////////////*/
 /*//////////////////////////////////////RESULTAT//////////////////////////////*/
 
@@ -134,6 +135,20 @@ thead {
 tbody {
     color: black;
     background: linear-gradient(cornsilk, darkslategray);
+}
+
+input[type='reset'] {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0px 6px 6px  rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type='reset']:hover {
+    background: darkslategray;
+    color: cornsilk;
+    transition: ease-in-out 0.5s;
 }
 
 /*//////////////////////////////////////RESPONSIVE//////////////////////////////*/
