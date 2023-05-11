@@ -38,9 +38,10 @@
             // Enregistrer ce produit créer en session
 
             $_SESSION['products'][] = $product;
-           // $_SESSION['nbProducts'][] = count($_SESSION['products']); //Compte l'array nbProducts pour sortir le nombre de produits.
-           // $_SESSION['checkSuccess'] = "Produit ajouté avec succès !";
-           // $_SESSION['checkSuccess'] = "Echec de l'ajout du produit !"; // Message indiquant que le produit n'est pas ajouté correctement.
+
+            // $_SESSION['nbProducts'][] = count($_SESSION['products']); //Compte l'array nbProducts pour sortir le nombre de produits.
+            // $_SESSION['checkSuccess'] = "Produit ajouté avec succès !";
+            // $_SESSION['checkSuccess'] = "Echec de l'ajout du produit !"; // Message indiquant que le produit n'est pas ajouté correctement.
               
         }
     
@@ -81,7 +82,7 @@
     //si ce n'est pas le cas la fonction header() effectuera une redirection vers un nouvel entête HTTP 
 
     // Pour envoyer une notification de redirection ajouter ?Message=" . urlencode($Message)
-    header("Location:index.php");
+        header("Location:index.php");
 
          //header("Location:index.php?Message=" . urlencode($Message));
          exit();

@@ -1,14 +1,12 @@
 <?php
-    // session_start();
+     session_start();
 
     // if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
 
     //     $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
 
     // }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
