@@ -45,7 +45,6 @@
 
         <form action="traitement.php" method="post">
 
-       
             <p>
                 <label>
                     Nom du produit<br>
