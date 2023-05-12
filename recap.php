@@ -100,6 +100,19 @@
 
                 //colspan = '4' permet de fusionner 4 cellules dont le contenu sera "Total général:".            
             }
+
+            ///////////////////////////////////////////////////////////////////////////////
+            // Remettre le tableau des références (produits) à zéro
+            ///////////////////////////////////////////////////////////////////////////////
+
+            //echo'<pre>';
+            //var_dump($product);
+            //echo'</pre>';
+
+            
+
+            ///////////////////////////////////////////////////////////////////////////////
+
         ?>
         
         <!-- Bouton pour reset le stock -->
@@ -115,13 +128,13 @@
             ///////////////////////////////////////////////////////////////////////////////
         
             if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {    
-                        echo "<p> Nombre de produits : 0 </p>";
-                    } else {
-                        $nbProducts = $_SESSION['nbProducts'];
-                        echo "<p>Nombre de produits : ".count($_SESSION['products'])."</p>";        
-                    }
-            ///////////////////////////////////////////////////////////////////////////////
+                echo "<p> Nombre de produits : 0 </p>";
+                } else {
+                     $nbProducts = $_SESSION['nbProducts'];
+                    echo "<p>Nombre de produits : ".count($_SESSION['products'])."</p>";        
+                }
 
+            ///////////////////////////////////////////////////////////////////////////////
 
         ?>
 
