@@ -136,6 +136,11 @@ tbody {
     background: linear-gradient(cornsilk, darkslategray);
 }
 
+td h3 {
+    text-align: left;
+    margin-left: 20px;
+}
+
 input[type='reset'] {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -238,6 +243,10 @@ input[type='reset']:hover {
         width: 240px;
     }
 
+    td h3 {
+        margin-left: 10px;
+    }
+    
     input[type='reset'] {
         width: 200px;
     }

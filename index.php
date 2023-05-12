@@ -69,18 +69,7 @@
         </form>
 
         <?php
-            ///////////////////////////////////////////////////////////////////////////////
-            //Modifier Veuillez ajouter un produit par Produit ajouté avec succès
-            //////////////////////////////////////////////////////////////////////////////
-
-            // if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
-
-            //     $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
-            // }
-
-            // echo "<p>".$_SESSION['checkSuccess']."<p>";
-
-            ////////////////////////////////////////////////////////////////////////////////
+           
         ?>
 
     </div>

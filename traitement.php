@@ -41,13 +41,11 @@
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             $_SESSION['nbProducts'][] = count($_SESSION['products']); //Compte l'array nbProducts pour sortir le nombre de produits.
-            
-            
 
-            // $_SESSION['checkSuccess'] = "Produit ajouté avec succès !";
+            //$_SESSION['checkSuccess'] = print($_SESSION['checkSuccess']);
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
         }
-    
+        print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
     }
 
     // Si la requête POST transmet bien une clé "submit" au serveur
@@ -55,6 +53,7 @@
     
     header("Location:index.php?Message=" . urlencode($Message));
     exit();
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Remettre le tableau des références (produits) à zéro

@@ -91,7 +91,7 @@
                         // number_format(float $nombre (ici le price), int decimale (2chiffre après virgule ici), le séparateur sous forme de string "," ou "." mais aussi "<br>" par ex)
                     
                         echo "<tr>",
-                            "<td colspan=4>Total général : </td>",
+                            "<td colspan=4><h3>Total général : </h3></td>",
                             "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
                         "</tr>",
 
@@ -123,17 +123,6 @@
             ///////////////////////////////////////////////////////////////////////////////
 
 
-            ///////////////////////////////////////////////////////////////////////////////
-            //Faire apparaitre une notification à chaque ajout de références dans le stock
-            //////////////////////////////////////////////////////////////////////////////
-       
-            // if(isset($_SESSION['product'])==$product){
-            //     echo "";
-            // }else{
-            //     print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
-            // }
-            //////////////////////////////////////////////////////////////////////////////
-       
         ?>
 
     </div>    
