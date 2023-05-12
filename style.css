@@ -170,6 +170,11 @@ input[type='reset']:hover {
     table {
         width:400px;
     }
+
+    input[type='reset'] {
+        width: 250px;
+    }
+    
 }
 
 @media only screen and (max-width:996px) {
@@ -185,6 +190,10 @@ input[type='reset']:hover {
 
     form {
         width: 280px;
+    }
+
+    input[type='reset'] {
+        width: 250px;
     }
     
 }
@@ -207,6 +216,11 @@ input[type='reset']:hover {
     table {
         width:360px;
     }
+
+    input[type='reset'] {
+        width: 230px;
+    }
+    
 }
 
 @media only screen and (max-width:460px) {
@@ -223,4 +237,9 @@ input[type='reset']:hover {
     form {
         width: 240px;
     }
+
+    input[type='reset'] {
+        width: 200px;
+    }
+    
 }
