@@ -42,6 +42,8 @@
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             $_SESSION['nbProducts'][] = count($_SESSION['products']); //Compte l'array nbProducts pour sortir le nombre de produits.
             
+            
+
             // $_SESSION['checkSuccess'] = "Produit ajouté avec succès !";
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
         }
@@ -51,13 +53,26 @@
     // Si la requête POST transmet bien une clé "submit" au serveur
     //si ce n'est pas le cas la fonction header() effectuera une redirection vers un nouvel entête HTTP 
     
-    //header("Location:index.php");
-    //exit();
+    header("Location:index.php?Message=" . urlencode($Message));
+    exit();
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Remettre le tableau des références (produits) à zéro
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- 
+    
+    if(isset($_POST['reset'])){
+
+        $_SESSION['products'][] = 0; // Reset toutes les références du tableau.
+        
+    }
+
+    // Pour envoyer une notification de redirection ajouter ?Message=" . urlencode($Message) 
+      
+    header("Location:index.php?Message=" . urlencode($Message));
+    exit();
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     // foreach ($_POST as $key => $value){ // On parcourt le tableau $_POST qui contiendra les clés qui sont envoyées (dans notre cas le bouton supprimer)
 
     //     if ($value == "Supprimer"){ // On s'occupe de la valeur, "Supprimer" correspond à la value du bouton tandis que la clé c'est l'index des produits.
@@ -89,8 +104,5 @@
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
-    // Pour envoyer une notification de redirection ajouter ?Message=" . urlencode($Message)   
-    header("Location:index.php?Message=" . urlencode($Message));
-    exit();
         
 ?>

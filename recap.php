@@ -66,14 +66,16 @@
                                 "<th>Total</th>",
                             "</tr>",
                         "</thead>",
-                        "<tbody>";  
-
-                    $totalGeneral = 0;
-                    foreach($_SESSION['products'] as $index => $product){
-
-                    // On parcourt ici le tableau products et on ressort $index et $product pour en manipuler facilement les données.
                         
-                    echo "<tr>",
+                    "<tbody>";  
+
+                        $totalGeneral = 0;
+
+                        foreach($_SESSION['products'] as $index => $product){
+
+                        // On parcourt ici le tableau products et on ressort $index et $product pour en manipuler facilement les données.
+                        
+                        echo "<tr>",
                             "<td>".$index."</td>",
                             "<td>".$product['name']."</td>",
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
@@ -81,37 +83,25 @@
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         "</tr>";
                         
-                    $totalGeneral += $product['total'];
-                }
+                        $totalGeneral += $product['total'];
+                        }
                 
-                    // tr pour nouvelle ligne (table Row). On affichera à chaque fois le $product[item]. product étant un tableau qu'on a initialisé à chaque input contenant un name, un price, une qtt et un total.
-                    // number_format permet de formatter un nombre.
-                    // number_format(float $nombre (ici le price), int decimale (2chiffre après virgule ici), le séparateur sous forme de string "," ou "." mais aussi "<br>" par ex)
+                        // tr pour nouvelle ligne (table Row). On affichera à chaque fois le $product[item]. product étant un tableau qu'on a initialisé à chaque input contenant un name, un price, une qtt et un total.
+                        // number_format permet de formatter un nombre.
+                        // number_format(float $nombre (ici le price), int decimale (2chiffre après virgule ici), le séparateur sous forme de string "," ou "." mais aussi "<br>" par ex)
                     
-                    echo "<tr>",
+                        echo "<tr>",
                             "<td colspan=4>Total général : </td>",
                             "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
                         "</tr>",
+
                     "</body>",
                 "</table>";
 
                 //colspan = '4' permet de fusionner 4 cellules dont le contenu sera "Total général:".            
             }
-
-            ///////////////////////////////////////////////////////////////////////////////
-            //Faire apparaitre une notification à chaque ajout de références dans le stock
-            //////////////////////////////////////////////////////////////////////////////
-       
-            // if(isset($_SESSION['product'])==$product){
-                
-            //     echo "";
-            // }else{
-
-            //     print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
-            // }
         ?>
-
-        <!-- //////////////////////////////////////////////////////////////////////////////// -->
+        
         <!-- Bouton pour reset le stock -->
 
         <form action="traitement.php" method="post">
@@ -119,9 +109,10 @@
         </form>
 
         <?php
+
             ///////////////////////////////////////////////////////////////////////////////
             //Pour afficher le nombre de produits en session (références en stock)
-            //////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////
         
             if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {    
                         echo "<p> Nombre de produits : 0 </p>";
@@ -129,7 +120,20 @@
                         $nbProducts = $_SESSION['nbProducts'];
                         echo "<p>nombre de produits : ".count($_SESSION['products'])."</p>";        
                     }
-            //////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////
+
+
+            ///////////////////////////////////////////////////////////////////////////////
+            //Faire apparaitre une notification à chaque ajout de références dans le stock
+            //////////////////////////////////////////////////////////////////////////////
+       
+            // if(isset($_SESSION['product'])==$product){
+            //     echo "";
+            // }else{
+            //     print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
+            // }
+            //////////////////////////////////////////////////////////////////////////////
+       
         ?>
 
     </div>    
