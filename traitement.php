@@ -9,6 +9,7 @@
     // Créer une condition pour limiter l'accès à cette page par les seules requêtes HTTP provenant de la soumission de notre formulaire.
 
     if(isset($_POST['submit'])){
+        
 
         // Vérifier l'intégrité des valeurs transmises dans le tableau $_POST
         // en fonction de celles que nous attendons réellement avec des filtres
@@ -45,7 +46,7 @@
             //$_SESSION['checkSuccess'] = print($_SESSION['checkSuccess']);
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
         }
-        print '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
+        
     }
 
     // Si la requête POST transmet bien une clé "submit" au serveur
@@ -61,12 +62,12 @@
     
     if(isset($_POST['reset'])){
 
-        //  unset($_SESSION['products']); // Reset toutes les références du tableau.
-        //  echo $_SESSION['products'][] = 0;
+        echo reset($_SESSION['products'][]);// Reset toutes les références du tableau.
+        
     }
 
     // Pour envoyer une notification de redirection ajouter ?Message=" . urlencode($Message) 
-
+    //echo '<script type="text/javascript">alert("Produit ajouté avec succès");location="index.php";</script>';
     header("Location:recap.php?Message=" . urlencode($Message));
     exit();
     
