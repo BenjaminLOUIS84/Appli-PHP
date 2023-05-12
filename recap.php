@@ -66,7 +66,7 @@
                                 "<th>Total</th>",
                             "</tr>",
                         "</thead>",
-                        
+
                     "<tbody>";  
 
                         $totalGeneral = 0;
@@ -118,7 +118,7 @@
                         echo "<p> Nombre de produits : 0 </p>";
                     } else {
                         $nbProducts = $_SESSION['nbProducts'];
-                        echo "<p>nombre de produits : ".count($_SESSION['products'])."</p>";        
+                        echo "<p>Nombre de produits : ".count($_SESSION['products'])."</p>";        
                     }
             ///////////////////////////////////////////////////////////////////////////////
 
