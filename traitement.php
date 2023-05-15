@@ -71,9 +71,7 @@
             //Afficher une message à chaque ajout de produit.
             ///////////////////////////////////////////////////////////////////////////////
 
-            //$_SESSION['checkSuccess'] = "<p>Produit ajouté avec succès</p>";
             $_SESSION['checkSuccess'] = "<div id = messageAdd class = messAdd><p>Produit ajouté avec succès !</p></div>";
-            
            
             ///////////////////////////////////////////////////////////////////////////////
 

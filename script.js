@@ -1,14 +1,28 @@
-//Quand la page est chargée on peut intéragir avec le promgramme
-window.onload
+//////////////////////////////////////////////////////////////////////
+//  Ajouter une fonction qui éxécutera une animation pour
+//  faire disparaitre la fenêtre
 
-//  Rendre le message "Produit ajouté avec succès" dynamique
+setTimeout(function () {
+    validBox.classList.remove()
+    }, 500)
+  
+
+
+/////////////////////////////////////////////////////////////////////
+// 1 Rendre le message "Produit ajouté avec succès" dynamique
+// 2 Matérialiser la boite de dialogue 
+//////////////////////////////////////////////////////////////////////
 
 const box = document.createElement("div")
 
 box.classList.add("messAd")
 
 const board = document.querySelector("#messageAdd")
+
+let nb = 1
+
 board.appendChild(box)
 
-//  Rendre le bouton "AJOUTER" dynamique pour lui permettre d'afficher le message "Produit ajouté avec succès"
+/////////////////////////////////////////////////////////////////////
+
 
