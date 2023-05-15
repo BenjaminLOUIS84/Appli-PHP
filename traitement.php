@@ -11,6 +11,7 @@
     if (isset($_POST['reset'])){
 
         //unset($_SESSION['products']); //Pour détruire le tableau
+        
         $_SESSION['products'] = []; //Pour vider le tableau
         $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message          
     }
@@ -23,7 +24,6 @@
     
     if (isset($_POST['return'])){
 
-        //$_SESSION['checkSuccess'] = "<div class= messageF><p>Veuillez ajouter un produit</p></div>"; //Pour reset le message
         $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message
     }
    
