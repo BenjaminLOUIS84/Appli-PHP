@@ -30,12 +30,15 @@
             //Pour afficher le nombre de produits en session (références en stock)
             //////////////////////////////////////////////////////////////////////////////
 
-            if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {    
-                        echo "<p> Nombre de produits : 0 </p>";
-                    } else {
-                        $nbProducts = $_SESSION['nbProducts'];
-                        echo "<p>Nombre de produits : ".count($_SESSION['products'])."</p>";        
-                    }
+            if(!isset($_SESSION['products']) || empty($_SESSION['products'])) {    
+                        
+                echo "<p> Nombre de produits : 0 </p>";
+
+            } else {
+
+                echo "<p>Nombre de produits : ".count($_SESSION['products'])."</p>";  
+
+            }
             /////////////////////////////////////////////////////////////////////////////////
         ?>
 
@@ -43,12 +46,13 @@
         et method qui précise par quelle méthode les données seront transmises au serveur -->
         <!-- On privilégie Post pour ne pas polluer l'URL -->
 
+        
         <form action="traitement.php" method="post">
 
             <p>
                 <label>
                     Nom du produit<br>
-                    <input type="texte" name="name" required>
+                    <input type="text" name="name" required>
                 </label>
             </p>
             <p>
@@ -64,46 +68,48 @@
                 </label>
             </p>
             <p>
-                <input type="submit" name="submit" value="AJOUTER">
+                <input type="submit" name="addProduct" value="AJOUTER">
             </p>
         </form>
 
         <?php
+          
+            ///////////////////////////////////////////////////////////////////////////////
+            // Afficher un message à chaque ajout de produit
+            ///////////////////////////////////////////////////////////////////////////////
+
+            // if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
+
+            //     $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
+          
+            // }else{
+                
+            //     $_SESSION['checkSuccess'] = '<script type="text/javascript">alert("Produit ajouté avec succès")</script>';
+            //     echo "<p>".$_SESSION['checkSuccess']."<p>";
+            //     exit();
+            // }
            
+            ///////////////////////////////////////////////////////////////////////////////
+
         ?>
 
     </div>
 
     <?php
-
+         
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Envoyer un message de redirection vers le formulaire lorsque l'on tente d'accéder à la page de traitement sans passer par le formulaire
         // Afficher une notification de redirection à chaque fois que l'on retourne sur cette page
         ///////////////////////////////////////////////////////////////////////////////
     
-        echo '<script type="text/javascript">alert("Redirection effectuée avec succès")</script>';      
+        //echo '<script type="text/javascript">alert("Redirection effectuée avec succès")</script>';      
                  
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
     
 
-        ///////////////////////////////////////////////////////////////////////////////
-        // Afficher un message à chaque ajout de produit
-        ///////////////////////////////////////////////////////////////////////////////
-
-        if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
-
-            $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
-          
-        }
-
-        echo "<p>".$_SESSION['checkSuccess']."<p>";
-
-        ///////////////////////////////////////////////////////////////////////////////
-
-        
         
         ///////////////////////////////////////////////////////////////////////////////
-        // Remettre le tableau des références (produits) à zéro
+        
         ///////////////////////////////////////////////////////////////////////////////
 
 
@@ -112,12 +118,8 @@
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
     
-    
-        // if(isset($_POST['submit'])== 'is-clicked'){
-        //     echo '<script type="text/javascript">alert("Produit ajouté avec succès")</script>';
-        // }
-    
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ?>
 
 </body>

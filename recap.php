@@ -25,6 +25,10 @@
                 </nav>
             </header>
 
+        <!-- <form action ="traitement.php" method="post">
+            <input type="submit" name="return" value="RETOUR">                                    
+        </form>           -->
+
             <!--Réaliser 3 tests unitaires   -->
             <!-- Test 1 Accéder à recap.php sans ajouter de produit -->
         <?php
@@ -73,17 +77,17 @@
 
                         foreach($_SESSION['products'] as $index => $product){
 
-                        // On parcourt ici le tableau products et on ressort $index et $product pour en manipuler facilement les données.
-                        
-                        echo "<tr>",
-                            "<td>".$index."</td>",
-                            "<td>".$product['name']."</td>",
-                            "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                            "<td>".$product['qtt']."</td>",
-                            "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                        "</tr>";
-                        
-                        $totalGeneral += $product['total'];
+                            // On parcourt ici le tableau products et on ressort $index et $product pour en manipuler facilement les données.
+                            
+                            echo "<tr>",
+                                "<td>".$index."</td>",
+                                "<td>".$product['name']."</td>",
+                                "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                                "<td>".$product['qtt']."</td>",
+                                "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                            "</tr>";
+                            
+                            $totalGeneral += $product['total'];
                         }
                 
                         // tr pour nouvelle ligne (table Row). On affichera à chaque fois le $product[item]. product étant un tableau qu'on a initialisé à chaque input contenant un name, un price, une qtt et un total.
@@ -105,12 +109,7 @@
             // Remettre le tableau des références (produits) à zéro
             ///////////////////////////////////////////////////////////////////////////////
 
-            //echo'<pre>';
-            //var_dump($product);
-            //echo'</pre>';
-
             
-
             ///////////////////////////////////////////////////////////////////////////////
 
         ?>
@@ -118,7 +117,7 @@
         <!-- Bouton pour reset le stock -->
 
         <form action="traitement.php" method="post">
-            <input type="reset" name="reset" value="VIDER LE STOCK">
+            <input type="submit" name="reset" value="VIDER LE STOCK">
         </form>
 
         <?php
@@ -127,14 +126,18 @@
             //Pour afficher le nombre de produits en session (références en stock)
             ///////////////////////////////////////////////////////////////////////////////
         
-            if(!isset($_SESSION['nbProducts']) || empty($_SESSION['nbProducts'])) {    
+            if(!isset($_SESSION['products']) || empty($_SESSION['products'])) {
+                
                 echo "<p> Nombre de produits : 0 </p>";
-                } else {
-                     $nbProducts = $_SESSION['nbProducts'];
-                    echo "<p>Nombre de produits : ".count($_SESSION['products'])."</p>";        
-                }
+
+            } else {
+
+                echo "<p>Nombre de produits : ".count($_SESSION['products'])."</p>";
+                
+            }
 
             ///////////////////////////////////////////////////////////////////////////////
+
 
         ?>
 

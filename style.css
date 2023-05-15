@@ -101,7 +101,7 @@ input {
 
 input[type='submit'] {
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     box-shadow: 0px 6px 6px  rgb(0, 0, 0);
     cursor: pointer;
     font-weight: bold;
@@ -141,20 +141,21 @@ td h3 {
     margin-left: 20px;
 }
 
-input[type='reset'] {
+input[type='submit'] {
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 270px;
+    width: 250px;
     box-shadow: 0px 6px 6px  rgb(0, 0, 0);
     cursor: pointer;
     font-weight: bold;
 }
 
-input[type='reset']:hover {
+input[type='submit']:hover {
     background: darkslategray;
     color: cornsilk;
     transition: ease-in-out 0.5s;
 }
+
 
 /*//////////////////////////////////////RESPONSIVE//////////////////////////////*/
 
@@ -176,7 +177,7 @@ input[type='reset']:hover {
         width:400px;
     }
 
-    input[type='reset'] {
+    input[type='submit'] {
         width: 250px;
     }
     
@@ -197,7 +198,7 @@ input[type='reset']:hover {
         width: 280px;
     }
 
-    input[type='reset'] {
+    input[type='submit'] {
         width: 250px;
     }
     
@@ -222,7 +223,7 @@ input[type='reset']:hover {
         width:360px;
     }
 
-    input[type='reset'] {
+    input[type='submit'] {
         width: 230px;
     }
     
@@ -247,8 +248,8 @@ input[type='reset']:hover {
         margin-left: 10px;
     }
     
-    input[type='reset'] {
-        width: 200px;
+    input[type='submit'] {
+        width: 170px;
     }
     
 }
