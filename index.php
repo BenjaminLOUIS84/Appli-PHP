@@ -32,11 +32,11 @@
 
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])) {    
                         
-                echo "<p> Nombre de produits : 0 </p>";
+                echo "<p> Nombre de produits en stock : 0 </p>";
 
             } else {
 
-                echo "<p>Nombre de produits : ".count($_SESSION['products'])."</p>";  
+                echo "<p>Nombre de produits en stock: ".count($_SESSION['products'])."</p>";  
 
             }
             /////////////////////////////////////////////////////////////////////////////////

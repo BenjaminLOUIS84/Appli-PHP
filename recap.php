@@ -52,7 +52,7 @@
             // empty() 'products' est bien présent mais il n'y a aucune valeur à l'intérieur.
 
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
-                echo "<p>Aucun produit en stock...</p>";
+                echo "<div class = info><p>Aucun produit en stock</p></div>";
             }
 
             // Si une clé existe et qu'il y a des produits qui ont été add, alors on peut afficher ce que l'utilisateur a ajouté :            
@@ -119,11 +119,11 @@
         
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])) {
                 
-                echo "<p> Nombre de produits : 0 </p>";
+                echo "<p> Nombre de produits en stock : 0 </p>";
 
             } else {
 
-                echo "<p>Nombre de produits : ".count($_SESSION['products'])."</p>";
+                echo "<p>Nombre de produits en stock: ".count($_SESSION['products'])."</p>";
                 
             }
             ///////////////////////////////////////////////////////////////////////////////

@@ -18,13 +18,13 @@
     text-align: center;
     height: 660px;
     line-height: 2;
-    background: linear-gradient(darkslategray, cornsilk);
+    /* background: linear-gradient(darkslategray, cornsilk); */
 
     /*POUR METTRE UNE IMAGE EN ARRIERE PLAN*/
 
-    /* background-image: url(./image/rayons.jpg);
+    background-image: url(./image/rayons.jpg);
     background-size: cover; 
-    opacity: 80%; */
+    opacity: 80%;
 }
 
 /*//////////////////////////////////////TITRE//////////////////////////////*/
@@ -150,7 +150,6 @@ input[type='submit']:hover {
 
 }
 
-
 /*//////////////////////////////////////TABLEAU///////////////////////////////*/
 /*//////////////////////////////////////RESULTAT//////////////////////////////*/
 
@@ -176,6 +175,15 @@ tbody {
 td h3 {
     text-align: left;
     margin-left: 20px;
+}
+
+.info p {
+    color: cornsilk;
+    font-size: 1.3em;
+    background: linear-gradient(cornsilk, darkslategray);
+    box-shadow: 0px 10px 10px rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 3px;
 }
 
 /*//////////////////////////////////////RESPONSIVE//////////////////////////////*/
