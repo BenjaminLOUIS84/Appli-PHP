@@ -12,18 +12,21 @@
 
         //unset($_SESSION['products']); //Pour détruire le tableau
         $_SESSION['products'] = []; //Pour vider le tableau
+        $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message
+
                 
     }
    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Réactualiser le message en retournant sur la page du formulaire
+    // Reset le message en retournant sur la page du formulaire
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     if (isset($_POST['return'])){
 
-        $_SESSION['checkSuccess'] = "Veuillez ajouter un produit"; //Pour afficher le message
+        //$_SESSION['checkSuccess'] = "<div class= messageF><p>Veuillez ajouter un produit</p></div>"; //Pour reset le message
+        $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message
   
     }
    
@@ -68,8 +71,7 @@
             //Afficher une message à chaque ajout de produit.
             ///////////////////////////////////////////////////////////////////////////////
 
-           $_SESSION['checkSuccess'] = "Produit ajouté avec succès";
-           
+            $_SESSION['checkSuccess'] = "<p>Produit ajouté avec succès</p>";
            
             ///////////////////////////////////////////////////////////////////////////////
 

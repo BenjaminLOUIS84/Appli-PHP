@@ -81,14 +81,18 @@
 
             if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
 
-                $_SESSION['checkSuccess'] = "Veuillez ajouter un produit";
+                //$_SESSION['checkSuccess'] = "<div class= messageF><p>Veuillez ajouter un produit</p></div>";
+                $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>";
           
             }else{
-                
-                echo "<p>".$_SESSION['checkSuccess']."<p>";
+            
+                //echo "<div class= messageD><p>".$_SESSION['checkSuccess']."<p></div>";
+                echo $_SESSION['checkSuccess'];
             }
            
             ///////////////////////////////////////////////////////////////////////////////
+            
+            
 
         ?>
 
