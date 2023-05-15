@@ -25,6 +25,7 @@
     background-image: url(./image/rayons.jpg);
     background-size: cover; 
     opacity: 80%;
+    filter: saturate(50%);
 }
 
 /*//////////////////////////////////////TITRE//////////////////////////////*/
