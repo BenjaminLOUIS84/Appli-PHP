@@ -2,27 +2,11 @@
 //  Ajouter une fonction qui éxécutera une animation pour
 //  faire disparaitre la fenêtre
 
-setTimeout(function () {
-    validBox.classList.remove()
-    }, 500)
-  
+setTimeout(function(){
 
+    document.getElementById('messAdd').style.display= 'none';
 
-/////////////////////////////////////////////////////////////////////
-// 1 Rendre le message "Produit ajouté avec succès" dynamique
-// 2 Matérialiser la boite de dialogue 
-//////////////////////////////////////////////////////////////////////
-
-const box = document.createElement("div")
-
-box.classList.add("messAd")
-
-const board = document.querySelector("#messageAdd")
-
-let nb = 1
-
-board.appendChild(box)
+}, 2000);
 
 /////////////////////////////////////////////////////////////////////
-
 

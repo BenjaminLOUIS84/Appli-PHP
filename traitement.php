@@ -12,9 +12,7 @@
 
         //unset($_SESSION['products']); //Pour détruire le tableau
         $_SESSION['products'] = []; //Pour vider le tableau
-        $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message
-
-                
+        $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message          
     }
    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,7 +25,6 @@
 
         //$_SESSION['checkSuccess'] = "<div class= messageF><p>Veuillez ajouter un produit</p></div>"; //Pour reset le message
         $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message
-  
     }
    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,7 +34,6 @@
 
     if(isset($_POST['addProduct'])){
         
-
         // Vérifier l'intégrité des valeurs transmises dans le tableau $_POST
         // en fonction de celles que nous attendons réellement avec des filtres
         // pour éviter les failles par injection de code (XXS ou SQL Injection)
@@ -71,10 +67,9 @@
             //Afficher une message à chaque ajout de produit.
             ///////////////////////////////////////////////////////////////////////////////
 
-            $_SESSION['checkSuccess'] = "<div id = messageAdd class = messAdd><p>Produit ajouté avec succès !</p></div>";
+            $_SESSION['checkSuccess'] = "<div id = messAdd><p>Produit ajouté avec succès !</p></div>";
            
             ///////////////////////////////////////////////////////////////////////////////
-
         }
         
     }
