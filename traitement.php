@@ -72,7 +72,7 @@
             ///////////////////////////////////////////////////////////////////////////////
 
             //$_SESSION['checkSuccess'] = "<p>Produit ajouté avec succès</p>";
-            $_SESSION['checkSuccess'] = "<div class= message><p>Produit ajouté avec succès !</p></div>";
+            $_SESSION['checkSuccess'] = "<div id = messageAdd class = messAdd><p>Produit ajouté avec succès !</p></div>";
             
            
             ///////////////////////////////////////////////////////////////////////////////

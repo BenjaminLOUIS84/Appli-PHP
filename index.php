@@ -81,12 +81,10 @@
 
             if(!isset($_SESSION['checkSuccess'])|| empty(['checkSuccess'])){
 
-                //$_SESSION['checkSuccess'] = "<div class= messageF><p>Veuillez ajouter un produit</p></div>";
                 $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>";
           
             }else{
             
-                //echo "<div class= messageD><p>".$_SESSION['checkSuccess']."<p></div>";
                 echo $_SESSION['checkSuccess'];
             }
            
@@ -98,5 +96,7 @@
 
     </div>
 
+    <script src="script.js"></script>
+    
 </body>
 </html>

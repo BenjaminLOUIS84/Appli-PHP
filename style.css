@@ -128,19 +128,36 @@ input[type='submit']:hover {
     transition: ease-in-out 0.5s;
 }
 
-/*//////////////////////////////////////MESSAGE//////////////////////////////*/
+/*//////////////////////////////////////MESSAGE JS//////////////////////////////*/
 
- .message p{
+#messageAdd {
+    display: flex;
+    justify-content: center;
+}
+
+ .messAdd {
     border: 2px solid white;
     border-radius: 3px;
     padding: 20px;
     font-weight: bold;
     background: cornsilk;
     box-shadow: 0px 6px 6px  rgb(0, 0, 0);
+    animation: appear 3s;
 }
 
+/*////////////////////////////////Animation du message/////////////////////////*/
 
-/*//////////////////////////////////////TABLEAU//////////////////////////////*/
+@keyframes appear {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/*//////////////////////////////////////TABLEAU///////////////////////////////*/
 /*//////////////////////////////////////RESULTAT//////////////////////////////*/
 
 table {
