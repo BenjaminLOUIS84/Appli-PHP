@@ -20,7 +20,9 @@
                 <nav>
                     <h1>APPLI PHP</h1>
                     <div class="menu">
-                        <a href="index.php">RETOUR</a>    
+                        <form action="traitement.php" method="post">
+                            <input type="submit" name="return" value="RETOUR">
+                        </form>        
                     </div>
                 </nav>
             </header>
