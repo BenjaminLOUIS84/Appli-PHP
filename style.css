@@ -20,6 +20,9 @@
     line-height: 2;
 
     background: linear-gradient(darkslategray, cornsilk);
+
+    /*POUR METTRE UNE IMAGE EN ARRIERE PLAN*/
+
     /* background-image: url(./image/rayons.jpg);
     background-size: cover; 
     opacity: 80%; */
@@ -73,7 +76,7 @@ a {
 /*//////////////////////////////////////FORMULAIRE//////////////////////////////*/
 /*//////////////////////////////////////AJOUTER UN PRODUIT//////////////////////////////*/
 
-form {
+.formulaire {
     border-radius: 10px;
     width: 300px;
     background: linear-gradient(darkslategray, cornsilk);
@@ -141,22 +144,6 @@ td h3 {
     margin-left: 20px;
 }
 
-input[type='submit'] {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 250px;
-    box-shadow: 0px 6px 6px  rgb(0, 0, 0);
-    cursor: pointer;
-    font-weight: bold;
-}
-
-input[type='submit']:hover {
-    background: darkslategray;
-    color: cornsilk;
-    transition: ease-in-out 0.5s;
-}
-
-
 /*//////////////////////////////////////RESPONSIVE//////////////////////////////*/
 
 @media only screen and (max-width:1196px) {
@@ -170,15 +157,8 @@ input[type='submit']:hover {
         width: 40%;
     }
 
-    form {
-        width: 280px;
-    }
     table {
         width:400px;
-    }
-
-    input[type='submit'] {
-        width: 250px;
     }
     
 }
@@ -192,14 +172,6 @@ input[type='submit']:hover {
 
     header {
         width: 50%;
-    }
-
-    form {
-        width: 280px;
-    }
-
-    input[type='submit'] {
-        width: 250px;
     }
     
 }
@@ -215,18 +187,10 @@ input[type='submit']:hover {
         width: 80%;
     }
 
-    form {
-        width: 260px;
-    }
-
     table {
         width:360px;
     }
 
-    input[type='submit'] {
-        width: 230px;
-    }
-    
 }
 
 @media only screen and (max-width:460px) {
@@ -240,16 +204,8 @@ input[type='submit']:hover {
         width: 100%;
     }
 
-    form {
-        width: 240px;
-    }
-
     td h3 {
         margin-left: 10px;
-    }
-    
-    input[type='submit'] {
-        width: 170px;
     }
     
 }

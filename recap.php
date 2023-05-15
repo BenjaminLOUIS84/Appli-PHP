@@ -25,10 +25,6 @@
                 </nav>
             </header>
 
-        <!-- <form action ="traitement.php" method="post">
-            <input type="submit" name="return" value="RETOUR">                                    
-        </form>           -->
-
             <!--Réaliser 3 tests unitaires   -->
             <!-- Test 1 Accéder à recap.php sans ajouter de produit -->
         <?php
@@ -134,6 +130,6 @@
         ?>
 
     </div> 
-       
+
 </body>
 </html>
