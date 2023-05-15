@@ -64,8 +64,11 @@
                                 "<th>#</th>",
                                 "<th>Nom</th>",
                                 "<th>Prix</th>",
+                                "<th></th>",
                                 "<th>Quantité</th>",
+                                "<th></th>",
                                 "<th>Total</th>",
+                                "<th>Etat</th>",
                             "</tr>",
                         "</thead>",
 
@@ -80,9 +83,29 @@
                             echo "<tr>",
                                 "<td>".$index."</td>",
                                 "<td>".$product['name']."</td>",
+
                                 "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                                "<td>".$product['qtt']."</td>",
+                                
+                                // Ajouter les boutons "+" et "-" pour augmrenter ou reduire la quantité de chaque produits.
+
+                                "<td><form action = traitement.php method = post>
+                                    <input type = submit name = del value = - >
+                                </form></td>",
+
+                                "<td><div class = qnt>".$product['qtt']."</div></td>",
+
+                                "<td><form action = traitement.php method = post>
+                                    <input type = submit name = add value = + >
+                                </form></td>",
+
                                 "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                               
+                                // Ajouter un bouton Supprimer pour chaque produits.
+                           
+                                "<td><form action = traitement.php method = post>
+                                    <input type = submit name = delete value = Supprimer>
+                                </form></td>",
+
                             "</tr>";
                             
                             $totalGeneral += $product['total'];
@@ -94,6 +117,9 @@
                     
                         echo "<tr>",
                             "<td colspan=4><h3>Total général : </h3></td>",
+                            "<td></td>",
+                            "<td></td>",
+                            "<td></td>",
                             "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
                         "</tr>",
 
@@ -107,8 +133,8 @@
         
         <!-- Bouton pour reset le stock -->
 
-        <form action="traitement.php" method="post">
-            <input type="submit" name="reset" value="VIDER LE STOCK">
+        <form action = "traitement.php" method = "post">
+            <input type = "submit" name = "reset" value = "VIDER LE STOCK">
         </form>
 
         <?php
@@ -127,6 +153,10 @@
                 
             }
             ///////////////////////////////////////////////////////////////////////////////
+
+            // echo'<pre>';
+            // var_dump($_SESSION);
+            // echo'</pre>';
         ?>
 
     </div> 

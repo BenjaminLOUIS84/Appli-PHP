@@ -47,28 +47,28 @@
         <!-- On privilégie Post pour ne pas polluer l'URL -->
 
         <div class= formulaire>
-            <form action="traitement.php" method="post">
+            <form action = "traitement.php" method = "post">
 
                 <p>
                     <label>
                         Nom du produit<br>
-                        <input type="text" name="name" required>
+                        <input type = "text" name = "name" required>
                     </label>
                 </p>
                 <p>
                     <label>
                         Prix du produit<br>
-                        <input type="number" step="any" name="price" required>
+                        <input type = "number" step = "any" name = "price" required>
                     </label>
                 </p>
                 <p>
                     <label>
                         Quantité<br>
-                        <input type="number" name="qtt" value="i" required>
+                        <input type = "number" name = "qtt" value = "i" required>
                     </label>
                 </p>
                 <p>
-                    <input type="submit" name="addProduct" value="AJOUTER">
+                    <input type = "submit" name = "addProduct" value = "AJOUTER">
                 </p>
             </form>
         </div>
