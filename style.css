@@ -96,8 +96,10 @@ a {
 }
 
 p {
-    color:cornsilk;
+    color: cornsilk;
 }
+
+
 
 label {
     color: cornsilk;
@@ -138,6 +140,10 @@ input[type='submit']:hover {
     background: cornsilk;
     box-shadow: 0px 6px 6px  rgb(0, 0, 0);
     animation: appear 1s;
+}
+
+#messAdd p {
+    color:darkslategray;  
 }
 
 /*////////////////////////////////Animation du message/////////////////////////*/
