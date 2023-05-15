@@ -11,9 +11,11 @@
     if (isset($_POST['reset'])){
 
         //unset($_SESSION['products']); //Pour détruire le tableau
-
-        $_SESSION['products']=[]; //Pour vider le tableau
-          
+        $_SESSION['products'] = []; //Pour vider le tableau
+                
+        //unset($_SESSION['checkSuccess']);
+        //$_SESSION['checkSuccess'] = "Veuillez ajouter un produit"; //Pour vider le tableau
+  
     }
    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,10 +58,9 @@
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Afficher une message à chaque ajout de produit.
             ///////////////////////////////////////////////////////////////////////////////
-            
-           //$_SESSION['checkSuccess'] = '<script type="text/javascript">alert("Produit ajouté avec succès")</script>';
 
-           //$_SESSION['checkSuccess'] = "Produit ajouté avec succès";
+           $_SESSION['checkSuccess'] = "Produit ajouté avec succès";
+           
            
             ///////////////////////////////////////////////////////////////////////////////
 
