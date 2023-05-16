@@ -32,36 +32,19 @@
             <!--Réaliser 3 tests unitaires   -->
             <!-- Test 1 Accéder à recap.php sans ajouter de produit -->
         <?php
-            //echo'<pre>';
-            // var_dump($_SESSION);
-            // echo'</pre>';
-        ?>
-            <!-- Test 2 Accéder à recap.php après avoir ajouté 2 produits -->
-        <?php 
-            // echo'<pre>';
-            // var_dump($index['qtt']);
-            // echo'</pre>';
-        ?>
-            <!-- Test 3 Accéder à recap.php après avoir ajouté un produit bizarre -->
-        <?php
-            // echo'<pre>';
-            // var_dump($_SESSION['products']);
-            // echo'</pre>';
-        ?>
-        <?php
+
             // Afficher les produits dans un tableau HTML
             // !isset  vérifie si dans le tableau associatif $_SESSION, il y a des données enregistrées (en occurence 'products' qu'on a créé dans traitement et qu'on a push)
             // empty() 'products' est bien présent mais il n'y a aucune valeur à l'intérieur.
 
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
+                
                 echo "<div class = info><p>Aucun produit en stock</p></div>";
-            }
 
-            // Si une clé existe et qu'il y a des produits qui ont été add, alors on peut afficher ce que l'utilisateur a ajouté :            
-            
-            else{
-                echo "<table>",
-                        "<thead>",
+            }else{// Si une clé existe et qu'il y a des produits qui ont été add, alors on peut afficher ce que l'utilisateur a ajouté :  
+                
+                echo "<table>
+                        <thead>",
                             "<tr>",
                                 "<th>#</th>",
                                 "<th>Nom</th>",
@@ -73,7 +56,6 @@
                                 "<th>Etat</th>",
                             "</tr>",
                         "</thead>",
-
                     "<tbody>";  
 
                         $totalGeneral = 0;

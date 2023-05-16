@@ -32,7 +32,7 @@
 
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])) {    
                         
-                echo "<p> Nombre de produits en stock : 0 </p>";
+                echo "<p>Nombre de produits en stock : 0 </p>";
 
             } else {
 
@@ -64,7 +64,7 @@
                 <p>
                     <label>
                         Quantité<br>
-                        <input type = "number" name = "qtt" value = "i" required>
+                        <input type = "number" name = "qtt" value = "" required>
                     </label>
                 </p>
                 <p>
