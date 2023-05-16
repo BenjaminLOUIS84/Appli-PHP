@@ -52,6 +52,9 @@
         header("Location:recap.php"); 
         exit;          
     }
+    
+    //header("Location:recap.php"); 
+    //exit; 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
@@ -64,7 +67,9 @@
         //die('hello');
 
         if($_GET['id'] && $_SESSION['products'][$_GET['id']]){
-          
+
+            //die('hi');//PB pour accéder ici
+            
             $_SESSION['products'][$_GET['id']]['qtt'] ++;
             $_SESSION['products'][$_GET['id']]['total']=($_SESSION['products'][$_GET['id']]['qtt']) * ($_SESSION['products'][$_GET['id']]['price']);
         }

@@ -61,8 +61,6 @@ h1 {
 }
 
 .menu:hover {
-    font-weight: bold;
-    font-size: 1em;
     opacity: 80%;
     transition: ease-in-out 0.5s;
     box-shadow: 0px 10px 10px rgb(0, 0, 0);
@@ -71,6 +69,8 @@ h1 {
 .menu input[type='submit'] {
     margin-top: 0px;
     margin-bottom: 0px;
+    color: cornsilk;
+    font-weight: bold;
     box-shadow: none;
     background: none; 
 }
@@ -197,7 +197,7 @@ th {
 }
 
 .info p {
-    color: black;
+    color: cornsilk;
     font-size: 1.3em;
     background: linear-gradient(cornsilk, coral);
     box-shadow: 0px 10px 10px rgb(0, 0, 0);

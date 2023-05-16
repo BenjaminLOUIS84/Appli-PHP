@@ -169,13 +169,15 @@
             // Afficher un message à chaque suppression de produit
             ///////////////////////////////////////////////////////////////////////////////
 
-            // if(isset($_SESSION['checkRemove'])|| empty(['checkRemove'])){
+            // if(!isset($_SESSION['checkRemove'])|| empty(['checkRemove'])){
+                
+            //     $_SESSION['checkSuccess'] = "<p></p>";
+            // }else{
 
-
-            // echo $_SESSION['checkRemove'];
+            //     echo $_SESSION['checkRemove'];
             
             // }
-            ///////////////////////////////////////////////////////////////////////////////
+            // ///////////////////////////////////////////////////////////////////////////////
 
         ?>
 
