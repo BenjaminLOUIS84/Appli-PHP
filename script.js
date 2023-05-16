@@ -4,7 +4,7 @@
 
 setTimeout(function(){
 
-    document.getElementById('messAdd').style.display= 'none';
+    document.getElementById('mess').style.display= 'none';
 
 }, 2000);
 

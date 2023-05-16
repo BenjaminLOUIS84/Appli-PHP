@@ -132,7 +132,7 @@ input[type='submit']:hover {
 
 /*//////////////////////////////////////MESSAGE JS//////////////////////////////*/
 
- #messAdd {
+ #mess {
     border: 2px solid white;
     border-radius: 3px;
     padding: 20px;
@@ -142,7 +142,7 @@ input[type='submit']:hover {
     animation: appear 1s;
 }
 
-#messAdd p {
+#mess p {
     color:darkslategray;  
 }
 

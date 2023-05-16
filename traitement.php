@@ -25,13 +25,13 @@
     if (isset($_POST['delete'])){
         
         unset($_SESSION['products'][$_POST['productIndex']]);//Pour effacer une référence
-            $_SESSION['checkRemove'] = "<p>Produit supprimé avec succès !</p>";
+            //$_SESSION['checkRemove'] = "<p>Produit supprimé avec succès !</p>";
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Afficher une message à chaque suppression de produit.
             ///////////////////////////////////////////////////////////////////////////////
 
-            $_SESSION['checkRemove'] = "<div id = mess><p>Produit supprimé avec succès !</p></div>";
+            //$_SESSION['checkRemove'] = "<div id = mess><p>Produit supprimé avec succès !</p></div>";
            
             ///////////////////////////////////////////////////////////////////////////////
 
@@ -132,10 +132,10 @@
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Si la requête POST transmet bien une clé "submit" au serveur on accède à la page recap automatiquement  
         // Si ce n'est pas le cas la fonction header() effectuera une redirection vers un nouvel entête HTTP on reste sur la page actuelle
-
-        header("Location:index.php");
-        exit; 
         
     }
+
+    header("Location:index.php");
+    exit; 
           
 ?>
