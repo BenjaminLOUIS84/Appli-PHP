@@ -20,9 +20,11 @@
                 <nav>
                     <h1>APPLI PHP</h1>
                     <div class="menu">
+                        
                         <form action="traitement.php" method="post">
                             <input type="submit" name="return" value="RETOUR">
-                        </form>        
+                        </form>  
+
                     </div>
                 </nav>
             </header>
@@ -37,13 +39,13 @@
             <!-- Test 2 Accéder à recap.php après avoir ajouté 2 produits -->
         <?php 
             // echo'<pre>';
-            // var_dump($_SESSION);
+            // var_dump($index['qtt']);
             // echo'</pre>';
         ?>
             <!-- Test 3 Accéder à recap.php après avoir ajouté un produit bizarre -->
         <?php
             // echo'<pre>';
-            // var_dump($_SESSION);
+            // var_dump($_SESSION['products']);
             // echo'</pre>';
         ?>
         <?php
@@ -88,23 +90,31 @@
                                 
                                 // Ajouter les boutons "+" et "-" pour augmrenter ou reduire la quantité de chaque produits.
 
-                                "<td><form action = traitement.php method = post>
-                                    <input type = submit name = del value = - >
-                                </form></td>",
+                                // "<td><form action = 'traitement.php?del&id=$index' method = 'post'>
+                                //         <input type = submit name = 'del' value = '-' >
+                                //     </form></td>",
+
+                                "<td><a href='traitement.php?del&id=$index'>-</a></td>",
 
                                 "<td><div class = qnt>".$product['qtt']."</div></td>",
 
-                                "<td><form action = traitement.php method = post>
-                                    <input type = submit name = add value = + >
-                                </form></td>",
+                                // "<td><form action = 'traitement.php?add&id=$index' method = 'post'>
+                                //         <input type = submit name = 'add' value = '+' >
+                                //     </form></td>",
+
+                                "<td><a href='traitement.php?add&id=$index'>+</a></td>",
 
                                 "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                
-                                // Ajouter un bouton Supprimer pour chaque produits.
+                                // Ajouter un boutton Supprimer pour chaque produits
+                                // Dans ce boutton on inscrit dans l'action (après 'traitement.php') "? & id=$index" 
+                                // Il s'agit de créer un paramêtre de requête avec pour valeur $index pour lier le chemin vers cet index au boutton
                            
-                                "<td><form action = traitement.php method = post>
-                                    <input type = submit name = delete value = Supprimer>
-                                </form></td>",
+                                "<td><form action = 'traitement.php?delete&id=$index' method = 'post'>
+                                        <input type = 'submit' name = 'delete' value = 'Supprimer'>
+                                    </form></td>",
+
+                                // "<td><a href='traitement.php?delete&id=$index'>SUPPRIMER</a></td>", On peut mettre le bouton dans un "a" pour voir le chemin de navigation
 
                             "</tr>";
                             
@@ -145,7 +155,7 @@
         
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])) {
                 
-                echo "<p> Nombre de produits en stock : 0 </p>";
+                echo "<p>Nombre de produits en stock : 0 </p>";
 
             } else {
 
@@ -154,19 +164,24 @@
             }
             ///////////////////////////////////////////////////////////////////////////////
 
-
+           
             ///////////////////////////////////////////////////////////////////////////////
             // Afficher un message à chaque suppression de produit
             ///////////////////////////////////////////////////////////////////////////////
-            
-            //echo $_SESSION['checkRemove'];
-            
-            ///////////////////////////////////////////////////////////////////////////////
 
+            // if(isset($_SESSION['checkRemove'])|| empty(['checkRemove'])){
+
+
+            // echo $_SESSION['checkRemove'];
+            
+            // }
+            ///////////////////////////////////////////////////////////////////////////////
 
         ?>
 
     </div> 
+
+    <script src="script.js"></script>
 
 </body>
 </html>

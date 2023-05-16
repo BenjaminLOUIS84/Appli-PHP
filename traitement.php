@@ -13,7 +13,10 @@
         //unset($_SESSION['products']); //Pour détruire le tableau
 
         $_SESSION['products'] = []; //Pour vider le tableau
-        $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message          
+        $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message  
+        
+        header("Location:recap.php"); 
+        exit;   
     }
    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,37 +25,53 @@
     // Effacer une référence du tableau avec le bouton "Supprimer"
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    // Pour effacer une référence en appelant la fonction dans l'action (en référencent le paramêtre avec la superglobale PHP $_GET)
+
     if (isset($_POST['delete'])){
-        
-        //unset($_SESSION['products'][$_POST['productIndex']]);//Pour effacer une référence
-            //$_SESSION['checkRemove'] = "<p>Produit supprimé avec succès !</p>";
 
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //Afficher une message à chaque suppression de produit.
-            ///////////////////////////////////////////////////////////////////////////////
+        // if($_GET['id'] && $_SESSION['products'][$_GET['id']]){
 
-            //$_SESSION['checkRemove'] = "<div id = mess><p>Produit supprimé avec succès !</p></div>";
+        //     unset($_SESSION['products'][$_GET['id']]);
+        // }
+
+        //Pour vérifier si la route est bonne (en cliquant sur le bouton "Supprimer" on atterri sur une autre page avec le mot "Hello")
+        // die('hello');
+
+        // Pour effacer une référence en réindexant les clés automatiquement
+
+        array_splice($_SESSION['products'], array_search(68, $_SESSION['products']),1);
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Afficher une message à chaque suppression de produit.
+        ///////////////////////////////////////////////////////////////////////////////
+
+        $_SESSION['checkRemove'] = "<div id = messAdd><p>Produit supprimé avec succès !</p></div>";
            
-            ///////////////////////////////////////////////////////////////////////////////
-
+        ///////////////////////////////////////////////////////////////////////////////
+        
         header("Location:recap.php"); 
         exit;          
     }
-   
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Augmenter la quantité d'une référence avec le bouton "+"
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    // if (isset($_POST['add'])){
+    if (isset($_GET['add'])){
+
+        //die('hello');
+
+        if($_GET['id'] && $_SESSION['products'][$_GET['id']]){
+          
+            $_SESSION['products'][$_GET['id']]['qtt'] ++;
+            $_SESSION['products'][$_GET['id']]['total']=($_SESSION['products'][$_GET['id']]['qtt']) * ($_SESSION['products'][$_GET['id']]['price']);
+        }
         
-    //     $_SESSION['products'][$index]["qtt"] += 1;
-    //     $_SESSION['products'][$index]["total"]= ($_SESSION['products'][$index]["qtt"]) * ($_SESSION['products'][$index]["price"]); 
-        
-    //     header("Location:recap.php");
-    //     exit;
-    // }
+        header("Location:recap.php");
+        exit;
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
@@ -60,14 +79,17 @@
     // Réduire la quantité d'une référence avec le bouton "-"
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    // if (isset($_POST['del'])){
+    if (isset($_GET['del'])){
 
-    //     $_SESSION['products'][$index]["qtt"] -= 1;
-    //     $_SESSION['products'][$index]["total"]= ($_SESSION['products'][$index]["qtt"]) * ($_SESSION['products'][$index]["price"]); 
-                          
-    //     header("Location:recap.php");
-    //     exit;
-    // }
+        if($_GET['id'] && $_SESSION['products'][$_GET['id']]){
+          
+            $_SESSION['products'][$_GET['id']]['qtt'] --;
+            $_SESSION['products'][$_GET['id']]['total']=($_SESSION['products'][$_GET['id']]['qtt']) * ($_SESSION['products'][$_GET['id']]['price']);
+        }
+        
+        header("Location:recap.php");
+        exit;
+    }
    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
@@ -78,8 +100,11 @@
     if (isset($_POST['return'])){
 
         $_SESSION['checkSuccess'] = "<p>Veuillez ajouter un produit</p>"; //Pour reset le message
+
+        header("Location:index.php");
+        exit;
     }
-   
+    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        
     // Vérifier l'éxistence d'une requête POST (vérifier l'existence de la clé "submit dans le tableau POST)
@@ -106,6 +131,7 @@
             // Construire un tableau associatif $ product pour conserver chaque produit renseigné
             
             $product = [
+        
                 "name" => $name,
                 "price" => $price,
                 "qtt" => $qtt,
@@ -132,10 +158,9 @@
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Si la requête POST transmet bien une clé "submit" au serveur on accède à la page recap automatiquement  
         // Si ce n'est pas le cas la fonction header() effectuera une redirection vers un nouvel entête HTTP on reste sur la page actuelle
-        
+      
+        header("Location:index.php");
+        exit;  
     }
-
-    header("Location:index.php");
-    exit; 
           
 ?>

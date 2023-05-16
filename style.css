@@ -16,7 +16,7 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    height: 660px;
+    height: 760px;
     line-height: 2;
 
     /* background: linear-gradient(darkslategray, cornsilk); */
@@ -213,7 +213,7 @@ table input[type='submit'] {
 @media only screen and (max-width:1196px) {
 
     #wrapper {
-        height: 700px;
+        height: 760px;
         margin: auto;
     }
 
