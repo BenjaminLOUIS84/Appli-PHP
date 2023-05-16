@@ -24,7 +24,7 @@
     
     if (isset($_POST['delete'])){
         
-        unset($_SESSION['products'][$_POST['productIndex']]);//Pour effacer une référence
+        //unset($_SESSION['products'][$_POST['productIndex']]);//Pour effacer une référence
             //$_SESSION['checkRemove'] = "<p>Produit supprimé avec succès !</p>";
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,14 +45,14 @@
     // Augmenter la quantité d'une référence avec le bouton "+"
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    if (isset($_POST['add'])){
+    // if (isset($_POST['add'])){
         
-        $_SESSION['products'][$index]["qtt"] += 1;
-        $_SESSION['products'][$index]["total"]= ($_SESSION['products'][$index]["qtt"]) * ($_SESSION['products'][$index]["price"]); 
+    //     $_SESSION['products'][$index]["qtt"] += 1;
+    //     $_SESSION['products'][$index]["total"]= ($_SESSION['products'][$index]["qtt"]) * ($_SESSION['products'][$index]["price"]); 
         
-        header("Location:recap.php");
-        exit;
-    }
+    //     header("Location:recap.php");
+    //     exit;
+    // }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
@@ -60,14 +60,14 @@
     // Réduire la quantité d'une référence avec le bouton "-"
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    if (isset($_POST['del'])){
+    // if (isset($_POST['del'])){
 
-        $_SESSION['products'][$index]["qtt"] -= 1;
-        $_SESSION['products'][$index]["total"]= ($_SESSION['products'][$index]["qtt"]) * ($_SESSION['products'][$index]["price"]); 
+    //     $_SESSION['products'][$index]["qtt"] -= 1;
+    //     $_SESSION['products'][$index]["total"]= ($_SESSION['products'][$index]["qtt"]) * ($_SESSION['products'][$index]["price"]); 
                           
-        header("Location:recap.php");
-        exit;
-    }
+    //     header("Location:recap.php");
+    //     exit;
+    // }
    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
@@ -125,7 +125,7 @@
             //Afficher une message à chaque ajout de produit.
             ///////////////////////////////////////////////////////////////////////////////
 
-            $_SESSION['checkSuccess'] = "<div id = mess><p>Produit ajouté avec succès !</p></div>";
+            $_SESSION['checkSuccess'] = "<div id = messAdd><p>Produit ajouté avec succès !</p></div>";
            
             ///////////////////////////////////////////////////////////////////////////////
         }
