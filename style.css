@@ -23,10 +23,9 @@
 
     /*POUR METTRE UNE IMAGE EN ARRIERE PLAN*/
 
-    background-image: url(./image/rayons.jpg);
+    background-image: url(./image/rayons2.jpg);
     background-size: cover; 
     opacity: 80%;
-    filter: saturate(50%);
 }
 
 /*//////////////////////////////////////TITRE//////////////////////////////*/
@@ -44,7 +43,7 @@ header {
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 3em;
-    color: darkslategray;
+    color:coral;
     text-align: center;
     background: cornsilk;
 }
@@ -56,7 +55,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(cornsilk, darkslategray);
+    background: linear-gradient(cornsilk, coral);
     padding: 5px;
     width: 100%;
 }
@@ -77,12 +76,18 @@ h1 {
 }
 
 .menu input[type='submit']:hover {
-    background: none; 
+    background: none;
+    color: black; 
 }
 
 a {
     text-decoration: none;
     color: cornsilk;
+}
+
+a:hover {
+    color: black;
+    transition: ease-in-out 0.5s;
 }
 
 /*//////////////////////////////////////FORMULAIRE//////////////////////////////*/
@@ -91,7 +96,7 @@ a {
 .formulaire {
     border-radius: 10px;
     width: 300px;
-    background: linear-gradient(darkslategray, cornsilk);
+    background: linear-gradient(coral, cornsilk);
     box-shadow: 0px 10px 10px rgb(0, 0, 0);
 }
 
@@ -102,14 +107,14 @@ p {
 
 
 label {
-    color: cornsilk;
+    color: black;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 input {
     background: cornsilk;
-    color: darkslategray;
+    color: coral;
     padding: 10px;
     border-radius: 3px;
     border: none;
@@ -125,7 +130,7 @@ input[type='submit'] {
 }
 
 input[type='submit']:hover {
-    background: darkslategray;
+    background: coral;
     color: cornsilk;
     transition: ease-in-out 0.5s;
 }
@@ -143,7 +148,8 @@ input[type='submit']:hover {
 }
 
 #messAdd p {
-    color:darkslategray;  
+    color:coral; 
+    font-weight: bold;
 }
 
 /*////////////////////////////////Animation du message/////////////////////////*/
@@ -170,13 +176,13 @@ table {
 }
 
 thead {
-    background: linear-gradient(darkslategray, cornsilk);
+    background: linear-gradient(coral, cornsilk);
     color: cornsilk;
     font-weight: bold;
 }
 
 tbody {
-    background: linear-gradient(cornsilk, darkslategray);
+    background: linear-gradient(cornsilk, coral);
 }
 
 td h3 {
@@ -187,12 +193,13 @@ td h3 {
 
 th {
     padding: 10px;
+    color: black;
 }
 
 .info p {
-    color: cornsilk;
+    color: black;
     font-size: 1.3em;
-    background: linear-gradient(cornsilk, darkslategray);
+    background: linear-gradient(cornsilk, coral);
     box-shadow: 0px 10px 10px rgb(0, 0, 0);
     padding: 5px;
     border-radius: 3px;

@@ -90,19 +90,19 @@
                                 
                                 // Ajouter les boutons "+" et "-" pour augmrenter ou reduire la quantité de chaque produits.
 
-                                // "<td><form action = 'traitement.php?del&id=$index' method = 'post'>
-                                //         <input type = submit name = 'del' value = '-' >
-                                //     </form></td>",
+                                "<td><form action = 'traitement.php?del&id=$index' method = 'post'>
+                                    <input type = submit name = 'del' value = '-' >
+                                </form></td>",
 
-                                "<td><a href='traitement.php?del&id=$index'>-</a></td>",
+                                //"<td><a href='traitement.php?del&id=$index'>-</a></td>",
 
                                 "<td><div class = qnt>".$product['qtt']."</div></td>",
 
-                                // "<td><form action = 'traitement.php?add&id=$index' method = 'post'>
-                                //         <input type = submit name = 'add' value = '+' >
-                                //     </form></td>",
+                                "<td><form action = 'traitement.php?add&id=$index' method = 'post'>
+                                    <input type = submit name = 'add' value = '+' >
+                                </form></td>",
 
-                                "<td><a href='traitement.php?add&id=$index'>+</a></td>",
+                                //"<td><a href='traitement.php?add&id=$index'>+</a></td>",
 
                                 "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                
