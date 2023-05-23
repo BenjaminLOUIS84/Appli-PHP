@@ -121,6 +121,40 @@
         // en fonction de celles que nous attendons réellement avec des filtres
         // pour éviter les failles par injection de code (XXS ou SQL Injection)
 
+        ///////////////////////////////////////////////////////////////////////////////
+        //XSS
+        //Le cross-site scripting (abrégé XSS) est un type de faille de sécurité des sites web permettant d'injecter du contenu dans une page,
+        //provoquant ainsi des actions sur les navigateurs web visitant la page.
+        //Les possibilités des XSS sont très larges puisque l'attaquant peut utiliser tous les langages pris en charge par le navigateur (JavaScript, Java...)
+        //et de nouvelles possibilités sont régulièrement découvertes notamment avec l'arrivée de nouvelles technologies comme HTML5.
+        //Il est par exemple possible de rediriger vers un autre site pour de l'hameçonnage ou encore de voler la session en récupérant les cookies.
+        
+
+        //PRINCIPE
+        //Le principe est d'injecter des données arbitraires dans un site web, si ces données arrivent dans la page web
+        //sans avoir été vérifiées on peut s'en servir pour faire exécuter du code malveillant en langage de script par le navigateur web qui consulte cette page
+
+        //CONTROLE
+        //La détection de la présence d'une faille XSS peut se faire par exemple en entrant un script Javascript dans un champ de formulaire ou dans une URL :
+
+            //<script>alert('bonjour')</script>​
+            
+        //Si une boîte de dialogue apparaît, on peut en conclure que l'application Web est sensible aux attaques de type XSS.
+
+        //RISQUES:
+        //Redirection vers d'autres site
+        //Vol d'informations
+        //Action sur le site faillible envoi de message, suppression de données,...
+        //Rendre la lecture difficile (boucle infinie d'alertes)
+
+        
+        //PROTECTION
+        //utiliser la fonction htmlspecialchars()​ qui filtre les '<' et '>' 
+        //utiliser la fonction htmlentities()​ qui est identique à htmlspecialchars()​ sauf qu'elle filtre tous les caractères équivalents au codage HTML ou JavaScript.
+        
+        //OU utiliser les filtres CI DESSOUS
+        ///////////////////////////////////////////////////////////////////////////////
+
         $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);//Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
         $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);//Validera le prix que si celui ci est décimal - Pour permettre l'utilisation du caractère "." ou ","
         $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);//Validera la quantité que si celle ci est un nombre entier
